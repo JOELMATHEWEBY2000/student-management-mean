@@ -1,0 +1,129 @@
+<div class="container mt-4">
+
+  <!-- Header -->
+  <div class="mb-4">
+    <h2>Dashboard</h2>
+
+    <p class="text-muted mb-0">
+      Student Management System
+    </p>
+  </div>
+
+
+  <!-- Loading -->
+  <div
+    *ngIf="loading"
+    class="alert alert-info">
+
+    Loading dashboard...
+
+  </div>
+
+
+  <!-- Error -->
+  <div
+    *ngIf="errorMessage"
+    class="alert alert-danger">
+
+    {{ errorMessage }}
+
+  </div>
+
+
+  <!-- Statistics -->
+  <div
+    *ngIf="!loading"
+    class="row g-4 mb-4">
+
+    <!-- Total Students -->
+    <div class="col-md-4">
+
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body">
+
+          <h6 class="text-muted">
+            Total Students
+          </h6>
+
+          <h2>
+            {{ totalStudents }}
+          </h2>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Total Courses -->
+    <div class="col-md-4">
+
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body">
+
+          <h6 class="text-muted">
+            Total Courses
+          </h6>
+
+          <h2>
+            {{ totalCourses }}
+          </h2>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Total Departments -->
+    <div class="col-md-4">
+
+      <div class="card shadow-sm h-100">
+
+        <div class="card-body">
+
+          <h6 class="text-muted">
+            Total Departments
+          </h6>
+
+          <h2>
+            {{ totalDepartments }}
+          </h2>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+    <div class="card-body p-0">
+
+      <!-- No Students -->
+      <div
+        *ngIf="!loading && recentStudents.length === 0"
+        class="p-3">
+
+        <p class="text-muted mb-0">
+          No students available.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+

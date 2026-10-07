@@ -1,0 +1,176 @@
+<div class="container">
+
+  <div class="student-form-card">
+
+    <div class="form-header">
+      <h3>
+        {{ isEditMode ? 'Edit Student' : 'Add Student' }}
+      </h3>
+    </div>
+
+    <div class="form-body">
+
+      <!-- Keep your existing success/error messages -->
+
+      <form
+        [formGroup]="studentForm"
+        (ngSubmit)="onSubmit()">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label class="form-label">Name</label>
+
+            <input
+              type="text"
+              class="form-control"
+              formControlName="name"
+              placeholder="Enter student name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email</label>
+
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              placeholder="Enter email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+
+            <input
+              type="text"
+              class="form-control"
+              formControlName="phone"
+              placeholder="Enter phone number">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Age</label>
+
+            <input
+              type="number"
+              class="form-control"
+              formControlName="age"
+              placeholder="Enter age">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Gender</label>
+
+            <select
+              class="form-select"
+              formControlName="gender">
+
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Course</label>
+
+            <select
+              class="form-select"
+              formControlName="course">
+
+              <option value="">Select Course</option>
+              <option value="B.Tech">B.Tech</option>
+              <option value="BCA">BCA</option>
+              <option value="B.Sc">B.Sc</option>
+              <option value="MCA">MCA</option>
+              <option value="M.Tech">M.Tech</option>
+
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Department</label>
+
+            <select
+              class="form-select"
+              formControlName="department">
+
+              <option value="">Select Department</option>
+              <option value="Computer Science">
+                Computer Science
+              </option>
+              <option value="Electrical Engineering">
+                Electrical Engineering
+              </option>
+              <option value="Electronics">
+                Electronics
+              </option>
+              <option value="Mechanical">
+                Mechanical
+              </option>
+              <option value="Civil">
+                Civil
+              </option>
+
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Semester</label>
+
+            <input
+              type="number"
+              class="form-control"
+              formControlName="semester"
+              placeholder="Enter semester">
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label">Address</label>
+
+            <textarea
+              class="form-control"
+              formControlName="address"
+              placeholder="Enter student address">
+            </textarea>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+
+          <button
+            type="submit"
+            class="btn-primary"
+            [disabled]="submitting">
+
+            {{
+              submitting
+                ? 'Saving...'
+                : (isEditMode
+                    ? 'Update Student'
+                    : 'Add Student')
+            }}
+
+          </button>
+
+          <button
+            type="button"
+            class="btn-secondary"
+            (click)="cancel()">
+
+            Cancel
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

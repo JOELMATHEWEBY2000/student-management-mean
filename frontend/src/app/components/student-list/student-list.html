@@ -1,0 +1,208 @@
+<div class="container">
+
+  <div class="student-list-card">
+
+    <!-- Header -->
+    <div class="list-header">
+      <h3>Students</h3>
+    </div>
+
+    <!-- Search and Filters -->
+    <div class="search-section">
+
+      <!-- Search -->
+      <div class="search-box">
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="search"
+          (keyup.enter)="searchStudents()"
+          placeholder="Search by name or email">
+      </div>
+
+      <!-- Department Filter -->
+      <div class="filter-box">
+        <select
+          class="form-select"
+          [(ngModel)]="department"
+          (change)="filterStudents()">
+
+          <option value="">All Departments</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Electrical Engineering">
+            Electrical Engineering
+          </option>
+          <option value="Electronics">Electronics</option>
+          <option value="Mechanical">Mechanical</option>
+          <option value="Civil">Civil</option>
+
+        </select>
+      </div>
+
+      <!-- Course Filter -->
+      <div class="filter-box">
+        <select
+          class="form-select"
+          [(ngModel)]="course"
+          (change)="filterStudents()">
+
+          <option value="">All Courses</option>
+          <option value="B.Tech">B.Tech</option>
+          <option value="BCA">BCA</option>
+          <option value="B.Sc">B.Sc</option>
+          <option value="MCA">MCA</option>
+          <option value="M.Tech">M.Tech</option>
+
+        </select>
+      </div>
+
+      <!-- Search Button -->
+<div class="search-button-box">
+
+  <button
+    type="button"
+    class="btn-search"
+    (click)="searchStudents()">
+
+    Search
+
+  </button>
+
+</div>
+
+  <!-- Clear Filters -->
+<div class="clear-button-box">
+
+  <button
+    type="button"
+    class="btn-clear"
+    (click)="clearFilters()">
+
+    Clear Filters
+
+  </button>
+
+</div>
+
+    </div>
+
+    <!-- Error Message -->
+    <div
+      *ngIf="errorMessage"
+      class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Loading -->
+    <div
+      *ngIf="loading"
+      class="loading-message">
+      Loading students...
+    </div>
+
+    <!-- Student Table -->
+    <div
+      class="table-container"
+      *ngIf="!loading && students.length > 0">
+
+      <table class="student-table">
+
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Course</th>
+            <th>Department</th>
+            <th>Semester</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let student of students">
+
+            <td>{{ student.name }}</td>
+
+            <td>{{ student.email }}</td>
+
+            <td>{{ student.phone }}</td>
+
+            <td>{{ student.age }}</td>
+
+            <td>{{ student.gender }}</td>
+
+            <td>{{ student.course }}</td>
+
+            <td>{{ student.department }}</td>
+
+            <td>{{ student.semester }}</td>
+
+            <td class="actions">
+
+              <!-- Edit -->
+              <button
+                type="button"
+                class="btn-edit"
+                (click)="editStudent(student._id!)">
+                Edit
+              </button>
+
+              <!-- Delete -->
+              <button
+                type="button"
+                class="btn-delete"
+                (click)="deleteStudent(student._id!)">
+                Delete
+              </button>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <!-- No Students -->
+    <div
+      *ngIf="!loading && students.length === 0"
+      class="no-students">
+      No students found.
+    </div>
+
+    <!-- Pagination -->
+    <div
+      class="pagination"
+      *ngIf="!loading && totalPages > 1">
+
+      <button
+        type="button"
+        class="pagination-btn"
+        (click)="goToPage(currentPage - 1)"
+        [disabled]="currentPage === 1">
+        Previous
+      </button>
+
+      <span class="page-info">
+        Page {{ currentPage }} of {{ totalPages }}
+      </span>
+
+      <button
+        type="button"
+        class="pagination-btn"
+        (click)="goToPage(currentPage + 1)"
+        [disabled]="currentPage === totalPages">
+        Next
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

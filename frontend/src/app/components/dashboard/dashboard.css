@@ -1,0 +1,264 @@
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+
+/* =========================================
+   DASHBOARD HEADER
+========================================= */
+
+.container > .mb-4 {
+  margin-bottom: 30px !important;
+}
+
+.container > .mb-4 h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.container > .mb-4 p {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #64748b !important;
+}
+
+
+/* =========================================
+   STATISTICS ROW
+========================================= */
+
+.row.g-4 {
+  margin-top: 10px;
+}
+
+
+/* =========================================
+   STATISTICS CARDS
+========================================= */
+
+.row.g-4 .card {
+  border: none !important;
+  border-radius: 14px !important;
+  background: #ffffff;
+
+  min-height: 145px;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.07) !important;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  overflow: hidden;
+}
+
+
+/* Hover */
+
+.row.g-4 .card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* =========================================
+   CARD ACCENT COLORS
+========================================= */
+
+/* Total Students */
+
+.row.g-4 .col-md-4:nth-child(1) .card {
+  border-top: 5px solid #2563eb !important;
+}
+
+
+/* Total Courses */
+
+.row.g-4 .col-md-4:nth-child(2) .card {
+  border-top: 5px solid #16a34a !important;
+}
+
+
+/* Total Departments */
+
+.row.g-4 .col-md-4:nth-child(3) .card {
+  border-top: 5px solid #9333ea !important;
+}
+
+
+/* =========================================
+   CARD BODY
+========================================= */
+
+.row.g-4 .card-body {
+  padding: 25px !important;
+}
+
+
+/* Card title */
+
+.row.g-4 .card-body h6 {
+  margin: 0 0 12px;
+
+  color: #64748b !important;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* Number */
+
+.row.g-4 .card-body h2 {
+  margin: 0;
+
+  color: #1e293b;
+
+  font-size: 38px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   INDIVIDUAL CARD BACKGROUNDS
+========================================= */
+
+.row.g-4 .col-md-4:nth-child(1) .card-body {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 70%,
+      #eff6ff
+    );
+}
+
+.row.g-4 .col-md-4:nth-child(2) .card-body {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 70%,
+      #f0fdf4
+    );
+}
+
+.row.g-4 .col-md-4:nth-child(3) .card-body {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 70%,
+      #faf5ff
+    );
+}
+
+
+/* =========================================
+   LOADING MESSAGE
+========================================= */
+
+.alert {
+  border: none;
+  border-radius: 9px;
+
+  padding: 14px 18px;
+
+  font-size: 14px;
+}
+
+.alert-info {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.alert-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+
+/* =========================================
+   RECENT STUDENTS AREA
+========================================= */
+
+.container > .card {
+  border: none !important;
+
+  border-radius: 14px !important;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.07) !important;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   CARD BODY
+========================================= */
+
+.container > .card .card-body {
+  padding: 25px !important;
+}
+
+
+/* =========================================
+   EMPTY STUDENT MESSAGE
+========================================= */
+
+.container > .card .text-muted {
+  color: #64748b !important;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 25px 15px;
+  }
+
+  .container > .mb-4 h2 {
+    font-size: 26px;
+  }
+
+  .row.g-4 .col-md-4 {
+    width: 100%;
+  }
+
+  .row.g-4 .card-body h2 {
+    font-size: 32px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .container {
+    padding: 20px 12px;
+  }
+
+  .container > .mb-4 h2 {
+    font-size: 24px;
+  }
+
+}
